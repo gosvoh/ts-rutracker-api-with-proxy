@@ -1,5 +1,11 @@
-# rutracker-api [![Build Status](https://travis-ci.org/nikityy/rutracker-api.svg?branch=master)](https://travis-ci.org/nikityy/rutracker-api)
+# rutracker-api-with-proxy
 Позволяет искать по раздачам трекера Rutracker.org. Поскольку поиск запрещён для незарегистрированных пользователей, также поддерживаетcя и авторизация.
+
+Данная библиотека - форк [rutracker-api](https://www.npmjs.com/package/rutracker-api), в котором:
+1. Добавлена [поддержка прокси](#proxy) (http, https, socks) - на случай, если rutracker недоступен в вашей локации.
+2. Добавлена поддержка взаимодействия с rutracker'ом по HTTPS.
+3. Добавлена возможность указать зеркало rutracker'а.
+4. Обновлены зависимости до последних версий
 
 ## Установка
 Запусти ```npm install rutracker-api-with-proxy``` (предполагается, что Node.js и пакетный менеждер npm у вас уже установлены). Для работы требуется версия Node.js >= 6.
@@ -57,6 +63,7 @@ rutracker.login({ username: '', password: '' })
   .then(uri => console.log(uri));
 ```
 
+<a name="proxy"/>
 ### Работа через HTTP(S)-proxy
 
 ```js
