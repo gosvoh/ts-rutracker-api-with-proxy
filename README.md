@@ -64,6 +64,7 @@ rutracker.login({ username: '', password: '' })
 ```
 
 <a name="proxy"/>
+
 ### Работа через HTTP(S)-proxy
 
 ```js
