@@ -1,4 +1,4 @@
-name: Publish Package to npmjs
+name: CI
 on: push
 
 jobs:
@@ -11,6 +11,7 @@ jobs:
           node-version: 18
       - run: npm install
       - run: npm test
-      - uses: JS-DevTools/npm-publish@v1
+      - if: github.ref == 'refs/heads/master'
+        uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
